@@ -46,6 +46,7 @@ $$
 y(t)=\begin{bmatrix}1 & 0\end{bmatrix} x(t),\quad D=0
 $$
 
+---
 
 ## P3.3 직렬 RLC 회로 (전압원 입력)
 
@@ -76,6 +77,8 @@ $$
 i_L(t)+C\frac{dv_c(t)}{dt}=\frac{v_2(t)-v_c(t)}{R}
 $$
 
+---
+
 ### 2) 상태미분방정식
 
 $$
@@ -105,6 +108,8 @@ $$
 0 & \frac{1}{RC}
 \end{bmatrix} v(t)
 $$
+
+---
 
 ## P3.5 피드백 제어 시스템
 
@@ -170,24 +175,21 @@ $$
 
 #### 상태변수 설정
 
-
 $$
-x(t) =
-\begin{bmatrix}
-x_1(t) \\
-x_2(t) \\
+x(t) = \begin{bmatrix}x_1(t) \\ 
+x_2(t) \\ 
 x_3(t)
-\end{bmatrix}
-=
+\end{bmatrix} = 
 \begin{bmatrix}
-z(t) \\
-\dot{z}(t) \\
+z(t) \\ 
+\dot{z}(t) \\ 
 \ddot{z}(t)
+\end{bmatrix} =
+\begin{bmatrix}
+z(t) \\ 
+\dot{x_1}(t) \\ 
+\ddot{x_2}(t)
 \end{bmatrix}
-$$
-
-$$
-x(t) = \begin{bmatrix}x_1(t) \\ x_2(t) \\ x_3(t)\end{bmatrix} = \begin{bmatrix}z(t) \\ \dot{z}(t) \\ \ddot{z}(t)\end{bmatrix}
 $$
 
 
@@ -201,7 +203,6 @@ $$
 $$
 \begin{cases}
 \dot{x}_3(t) = -2x_1(t) + 23x_2(t) - 5x_3(t) + r(t) \\
-\\[-2pt]
 y(t) = 2x_1(t) + x_2(t)
 \end{cases}
 $$
@@ -265,7 +266,7 @@ $$
 
 $$
 \begin{cases}
-y(t) = 8\dot{z}(t) + 40z(t) \\[6pt]
+y(t) = 8\dot{z}(t) + 40z(t) \\
 r(t) = \dddot{z}(t) + 12\ddot{z}(t) + 44\dot{z}(t) + 48z(t)
 \end{cases}
 $$
@@ -275,45 +276,21 @@ $$
 ### (2) 상태변수 정의
 
 $$
-x(t) = 
-\begin{bmatrix}
-x_1(t) \\
-x_2(t) \\
+x(t) = \begin{bmatrix}x_1(t) \\ 
+x_2(t) \\ 
 x_3(t)
-\end{bmatrix} =
-
+\end{bmatrix} = 
 \begin{bmatrix}
-z(t) \\
-\dot{z}(t) \\
-\ddot{z}(t) 
-\end{bmatrix} =
-
-\begin{bmatrix} 
-z(t) \\
-\dot{x_1}(t) \\
-\dot{x_2}(t) 
-\end{bmatrix}
-
-
-
-
-
-
-$$
-x(t) =
-\begin{bmatrix}
-x_1(t) \\
-x_2(t) \\[3pt]
-x_3(t)
-\end{bmatrix}
-=
-\begin{bmatrix}
-z(t) \\[3pt]
-\dot{z}(t) \\[3pt]
+z(t) \\ 
+\dot{z}(t) \\ 
 \ddot{z}(t)
+\end{bmatrix} =
+\begin{bmatrix}
+z(t) \\ 
+\dot{x_1}(t) \\ 
+\ddot{x_2}(t)
 \end{bmatrix}
 $$
-
 
 ---
 
@@ -327,8 +304,6 @@ $$
 y(t) = 8\dot{z}(t) + 40z(t)
 \end{cases}
 $$
-
----
 
 $$
 \begin{cases}
@@ -381,12 +356,10 @@ A =
 $$
 
 $$
-\Phi(s) = [\, sI - A \,]^{-1}
+\Phi(t) = \mathcal{L}^{-1}\ \{\ (sI - A)^{-1}\ \}
 $$
 
-$$
-\Phi(t) = \mathcal{L}^{-1} \Big\{ [\,sI - A\,]^{-1} \Big\}
-$$
+
 
 $$
 [sI - A] =
@@ -448,42 +421,28 @@ $$
 
 $$
 \begin{cases}
-\dot{x}(t) = A\,x(t) + B\,u(t) \\
-y(t) = C\,x(t)
+\dot{x}(t) = Ax(t) + Bu(t) \\
+y(t) = Cx(t)
 \end{cases}
 $$
-
-$$
-\left\{
-\begin{aligned}
-\dot{x}(t) &= A\,x(t) + B\,u(t) \\[6pt]
-y(t) &= C\,x(t)
-\end{aligned}
-\right.
-$$
-
-$$ \dot{x}(t) = A\,x(t) + B\,u(t) $$
-$$ y(t) = C\,x(t) $$
-
-
 
 각각 라플라스 변환을 적용하면
 
 $$
 \begin{cases}
-X(s) = [\,sI - A\,]^{-1} B\,U(s) \\[6pt]
-Y(s) = C\,X(s)
+X(s) = [sI - A\]^{-1} BU(s) \\
+Y(s) = CX(s)
 \end{cases}
 $$
 
 두 식을 정리하면
 
 $$
-Y(s) = C\,\Phi(s)\,B\,U(s)
+Y(s) = C\\Phi(s)BU(s)
 $$
 
 $$
-G(s) = \frac{Y(s)}{U(s)} = C\,\Phi(s)\,B
+G(s) = \frac{Y(s)}{U(s)} = C\\Phi(s)B
 $$
 
 따라서
