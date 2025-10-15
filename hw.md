@@ -15,7 +15,7 @@ $$
 > 따라서
 
 $$
-\dot{x}_1(t) = x_2(t), \qquad \dot{x}_2(t) = \ddot{x}(t).
+\dot{x}_1(t)=x_2(t), \qquad \dot{x}_2(t) = \ddot{x}(t)
 $$
 
 
@@ -24,8 +24,8 @@ $$
 
 $$
 \begin{aligned}
-\dot x_1(t) &= x_2(t)\\
-\dot x_2(t)=\ddot x(t) &= -\frac{k}{m}x_1(t) - \frac{b}{m}x_2(t) + \frac{1}{m}F(t)
+\dot x_1(t) = x_2(t)\\
+\dot x_2(t)=\ddot x(t) = -\frac{k}{m}x_1(t) - \frac{b}{m}x_2(t) + \frac{1}{m}F(t)
 \end{aligned}
 $$
 
@@ -62,7 +62,7 @@ $$
 노드 KCL
 
 $$
-i_L(t)+C\frac{dv_c(t)}{dt}=i_R,   C\frac{dv_c}{dt}=-i_c(t)
+i_L(t)+C\frac{dv_c(t)}{dt}=i_R,    C\frac{dv_c(t)}{dt}=-i_c(t)
 $$
 
 i_R을 구하기 위해 오른쪽 작은 loop에 KVL을 적용하면
@@ -114,7 +114,7 @@ $$
 ## P3.5 피드백 제어 시스템
 
 그림 P3.5에 피드백 제어 시스템이 주어져 있다.  
-(a) 폐루프 전달함수 \( T(s) = \frac{Y(s)}{R(s)} \)를 구하라.  
+(a) 폐루프 전달함수 \( T(s) = {Y(s)}/{R(s)} \)를 구하라.  
 (b) 상태변수 모델을 구하고, 위상변수 형태의 블록선도를 작성하라.
 
 ---
@@ -156,6 +156,7 @@ Y(s) = (s+2)Z(s)
 $$
 
 이를 역라플라스 변환하면
+
 $$
 y(t) = \dot{z}(t) + 2z(t)
 $$
@@ -356,7 +357,7 @@ A =
 $$
 
 $$
-\Phi(t) = \mathcal{L}^{-1}\ \{\ (sI - A)^{-1}\ \}
+\Phi(s) = [ sI - A ]^{-1}
 $$
 
 
